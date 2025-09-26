@@ -98,15 +98,14 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <svg
-                className="h-8 w-8 text-primary-400"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M13 3L4 14h7v7l9-11h-7V3z" />
-              </svg>
+              <img
+                src="/favicon.png"
+                alt="Smart Landing"
+                className="h-8 w-8"
+              />
               <span className="ml-2 text-2xl font-bold">
-                {t("footer.brand")}
+                <span className="text-primary-400">Smart</span>
+                <span className="text-accent-400">Landing</span>
               </span>
             </motion.div>
 

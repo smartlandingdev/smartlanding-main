@@ -38,7 +38,7 @@ const Portfolio: React.FC = () => {
       title: t("portfolio.projects.3.title"),
       description: t("portfolio.projects.3.description"),
       image:
-        "https://images.unsplash.com/photo-1559757175-8a6c315f97c4?w=600&h=400&fit=crop&crop=center",
+        "https://www.hospitalpresidente.com.br/wp-content/uploads/2023/03/clinica-medica.jpg",
       url: "https://example.com/medical-clinic",
       category: "Healthcare",
     },

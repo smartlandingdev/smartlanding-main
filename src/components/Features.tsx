@@ -110,8 +110,12 @@ const Features: React.FC = () => {
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
               >
-                <div className="flex items-center justify-center w-16 h-16 bg-primary-100 rounded-2xl mb-6">
-                  <IconComponent className="h-8 w-8 text-primary-600" />
+                <div className={`flex items-center justify-center w-16 h-16 rounded-2xl mb-6 ${
+                  index % 2 === 0 ? 'bg-accent-100' : 'bg-primary-100'
+                }`}>
+                  <IconComponent className={`h-8 w-8 ${
+                    index % 2 === 0 ? 'text-accent-600' : 'text-primary-600'
+                  }`} />
                 </div>
 
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -125,7 +129,11 @@ const Features: React.FC = () => {
                 {/* Decorative Element */}
                 <div className="mt-6 pt-4 border-t border-gray-100">
                   <motion.div
-                    className="w-12 h-1 bg-gradient-to-r from-primary-600 to-accent-400 rounded-full"
+                    className={`w-12 h-1 rounded-full ${
+                      index % 2 === 0
+                        ? 'bg-gradient-to-r from-accent-600 to-accent-400'
+                        : 'bg-gradient-to-r from-primary-600 to-primary-400'
+                    }`}
                     initial={{ width: 0 }}
                     whileInView={{ width: 48 }}
                     viewport={{ once: true }}
@@ -150,7 +158,7 @@ const Features: React.FC = () => {
               const element = document.getElementById('services');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-lg text-lg font-medium hover:bg-primary-700 transition-colors duration-200 shadow-lg"
+            className="inline-flex items-center px-8 py-4 bg-accent-600 text-white rounded-lg text-lg font-medium hover:bg-accent-700 transition-colors duration-200 shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

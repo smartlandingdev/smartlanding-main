@@ -16,11 +16,19 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-600 via-primary-700 to-navy-800 overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-accent-500/5"></div>
+
+        {/* Foguetes de fundo */}
+        <div className="absolute inset-0 overflow-hidden">
+          <img src="/favicon.png" alt="" className="absolute top-20 right-20 w-16 h-16 opacity-5 transform rotate-12" />
+          <img src="/favicon.png" alt="" className="absolute bottom-32 left-32 w-12 h-12 opacity-5 transform -rotate-12" />
+          <img src="/favicon.png" alt="" className="absolute top-1/2 right-1/3 w-8 h-8 opacity-5 transform rotate-45" />
+        </div>
+
         <svg
           className="absolute inset-0 w-full h-full"
           preserveAspectRatio="none"
@@ -74,7 +82,7 @@ const Hero: React.FC = () => {
               >
                 <motion.a
                   href="mailto:smartlanding.dev@gmail.com"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-primary-700 bg-white rounded-lg hover:bg-gray-50 transition-colors duration-200 shadow-lg"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-navy-800 bg-white rounded-lg hover:bg-gray-50 transition-colors duration-200 shadow-lg"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -84,7 +92,7 @@ const Hero: React.FC = () => {
 
                 <motion.button
                   onClick={() => scrollToSection("services")}
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white border-2 border-white/30 rounded-lg hover:bg-white/10 transition-colors duration-200"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white border-2 border-accent-400/60 rounded-lg hover:bg-accent-500/20 transition-colors duration-200"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -122,7 +130,12 @@ const Hero: React.FC = () => {
                     </div>
 
                     {/* Website Preview */}
-                    <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+                    <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-accent-100 p-6 relative">
+                      {/* Foguete no canto */}
+                      <div className="absolute top-2 right-2 w-8 h-8 opacity-30">
+                        <img src="/favicon.png" alt="Smart Landing" className="w-full h-full" />
+                      </div>
+
                       <motion.div
                         className="space-y-4"
                         animate={{ y: [0, -10, 0] }}
@@ -132,15 +145,19 @@ const Hero: React.FC = () => {
                           ease: "easeInOut",
                         }}
                       >
-                        <div className="h-8 bg-primary-600 rounded w-1/3"></div>
+                        <div className="h-8 bg-primary-600 rounded w-1/3 relative">
+                          <div className="absolute right-1 top-1 w-6 h-6">
+                            <img src="/favicon.png" alt="" className="w-full h-full opacity-60" />
+                          </div>
+                        </div>
                         <div className="space-y-2">
-                          <div className="h-4 bg-gray-300 rounded w-full"></div>
+                          <div className="h-4 bg-accent-300 rounded w-full"></div>
                           <div className="h-4 bg-gray-300 rounded w-3/4"></div>
                         </div>
-                        <div className="h-8 bg-accent-400 rounded w-1/4"></div>
+                        <div className="h-8 bg-accent-500 rounded w-1/4"></div>
                         <div className="grid grid-cols-2 gap-4 mt-6">
-                          <div className="h-16 bg-white rounded shadow"></div>
-                          <div className="h-16 bg-white rounded shadow"></div>
+                          <div className="h-16 bg-white rounded shadow border-l-4 border-accent-400"></div>
+                          <div className="h-16 bg-white rounded shadow border-l-4 border-primary-500"></div>
                         </div>
                       </motion.div>
                     </div>
@@ -149,7 +166,7 @@ const Hero: React.FC = () => {
 
                 {/* Floating Elements */}
                 <motion.div
-                  className="absolute -top-4 -right-4 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow-lg"
+                  className="absolute -top-4 -right-4 bg-accent-600 text-white text-xs px-3 py-1 rounded-full shadow-lg flex items-center gap-1"
                   animate={{ y: [0, -10, 0] }}
                   transition={{
                     duration: 3,
@@ -157,11 +174,12 @@ const Hero: React.FC = () => {
                     ease: "easeInOut",
                   }}
                 >
+                  <img src="/favicon.png" alt="" className="w-3 h-3" />
                   SEO Ready
                 </motion.div>
 
                 <motion.div
-                  className="absolute -bottom-4 -left-4 bg-purple-500 text-white text-xs px-3 py-1 rounded-full shadow-lg"
+                  className="absolute -bottom-4 -left-4 bg-primary-600 text-white text-xs px-3 py-1 rounded-full shadow-lg"
                   animate={{ y: [0, 10, 0] }}
                   transition={{
                     duration: 3,
@@ -171,6 +189,21 @@ const Hero: React.FC = () => {
                   }}
                 >
                   Mobile First
+                </motion.div>
+
+                {/* Elemento adicional com foguete */}
+                <motion.div
+                  className="absolute top-1/2 -left-6 bg-accent-500 text-white text-xs px-3 py-1 rounded-full shadow-lg flex items-center gap-1"
+                  animate={{ x: [0, -5, 0], rotate: [0, 5, 0] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.8,
+                  }}
+                >
+                  <img src="/favicon.png" alt="" className="w-3 h-3" />
+                  Fast
                 </motion.div>
               </div>
             </motion.div>
