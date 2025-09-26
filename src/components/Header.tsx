@@ -52,19 +52,18 @@ const Header: React.FC = () => {
             onClick={() => scrollToSection("hero")}
           >
             <div className="flex items-center">
-              <svg
-                className="h-8 w-8 text-primary-600"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M13 3L4 14h7v7l9-11h-7V3z" />
-              </svg>
+              <img
+                src="/favicon.png"
+                alt="Smart Landing"
+                className="h-8 w-8"
+              />
               <span
                 className={`ml-2 text-xl font-bold ${
                   isScrolled ? "text-gray-900" : "text-white"
                 }`}
               >
-                {t("header.brand")}
+                <span className={isScrolled ? "text-primary-700" : "text-white"}>Smart</span>
+                <span className={isScrolled ? "text-accent-600" : "text-accent-300"}>Landing</span>
               </span>
             </div>
           </motion.div>
@@ -90,7 +89,7 @@ const Header: React.FC = () => {
 
             <motion.a
               href="mailto:smartlanding.dev@gmail.com"
-              className="hidden sm:inline-flex bg-primary-600 text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors duration-200"
+              className="hidden sm:inline-flex bg-accent-600 text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-accent-700 transition-colors duration-200 shadow-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -135,7 +134,7 @@ const Header: React.FC = () => {
             ))}
             <a
               href="mailto:smartlanding.dev@gmail.com"
-              className="block bg-primary-600 text-white px-3 py-2 rounded-md text-base font-medium hover:bg-primary-700 text-center mt-4"
+              className="block bg-accent-600 text-white px-3 py-2 rounded-md text-base font-medium hover:bg-accent-700 text-center mt-4"
             >
               {t("header.cta")}
             </a>
